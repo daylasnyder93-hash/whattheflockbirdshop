@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>What The Flock Bird Shop</title>
 
     <style>
@@ -12,26 +13,37 @@
             padding: 0;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f6f0;
-            color: #263238;
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+        }
+
+        /* HEADER */
 
         header {
-            background: #263238;
-            color: white;
-            padding: 25px 8%;
+            background: #050505;
+            border-bottom: 2px solid #9cff00;
+            padding: 12px 6%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
+        .header-logo {
+            width: 160px;
+        }
+
+        .header-logo img {
+            width: 100%;
+            display: block;
         }
 
         nav a {
@@ -39,109 +51,244 @@
             text-decoration: none;
             margin-left: 25px;
             font-weight: bold;
+            transition: 0.2s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #9cff00;
         }
+
+        /* HERO */
 
         .hero {
-            min-height: 600px;
-            padding: 100px 8%;
+            min-height: 650px;
             display: flex;
             align-items: center;
-            background: #dfe8e2;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(circle at center, #202020 0%, #050505 65%);
         }
 
-        .hero-text {
-            max-width: 650px;
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: min(550px, 90%);
+            margin: 0 auto 25px;
         }
 
         .hero h1 {
-            font-size: 58px;
-            line-height: 1.1;
-            margin-bottom: 25px;
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #9cff00;
         }
 
         .hero p {
-            font-size: 21px;
-            margin-bottom: 30px;
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #dddddd;
         }
 
         .button {
             display: inline-block;
-            background: #263238;
-            color: white;
-            padding: 14px 25px;
+            background: #9cff00;
+            color: #050505;
+            padding: 15px 30px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 17px;
+            transition: 0.2s;
         }
+
+        .button:hover {
+            transform: scale(1.04);
+        }
+
+        /* SECTIONS */
 
         section {
-            padding: 70px 8%;
+            padding: 80px 7%;
         }
 
-        section h2 {
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
             font-size: 38px;
-            margin-bottom: 20px;
-            text-align: center;
+            text-transform: uppercase;
         }
 
-        .intro {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            font-size: 18px;
+        .section-title h2 span {
+            color: #9cff00;
         }
+
+        .section-title p {
+            color: #bbbbbb;
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        /* BIRDS */
 
         .birds {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
-            margin-top: 40px;
+            max-width: 1100px;
+            margin: auto;
         }
 
         .bird-card {
-            background: white;
-            padding: 30px;
+            background: #111111;
+            border: 1px solid #333333;
             border-radius: 10px;
+            padding: 35px 25px;
             text-align: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .bird-card:hover {
+            border-color: #9cff00;
+            transform: translateY(-5px);
+        }
+
+        .bird-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
         }
 
         .bird-card h3 {
             font-size: 23px;
             margin-bottom: 10px;
+            color: #9cff00;
         }
+
+        .bird-card p {
+            color: #cccccc;
+        }
+
+        /* ABOUT */
 
         .about {
-            background: #e9eee9;
+            background: #101010;
+            text-align: center;
         }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .about-content p {
+            color: #dddddd;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* WHY US */
+
+        .why-us {
+            background: #050505;
+        }
+
+        .reasons {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .reason {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .reason h3 {
+            color: #9cff00;
+            margin-bottom: 10px;
+        }
+
+        .reason p {
+            color: #bbbbbb;
+        }
+
+        /* CONTACT */
 
         .contact {
+            background: #9cff00;
+            color: #050505;
             text-align: center;
         }
+
+        .contact h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .contact .button {
+            background: #050505;
+            color: white;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #263238;
-            color: white;
+            background: #050505;
+            border-top: 1px solid #333333;
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
+            color: #999999;
         }
 
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 40px;
-            }
+        footer strong {
+            color: #9cff00;
+        }
 
-            nav {
-                margin-top: 15px;
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
             }
 
             nav a {
-                margin-left: 0;
-                margin-right: 15px;
+                margin: 0 8px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 60px 5%;
             }
         }
     </style>
@@ -150,97 +297,245 @@
 <body>
 
 <header>
-    <div class="logo">What The Flock Bird Shop</div>
+
+    <div class="header-logo">
+        <img src="image1.jpeg" alt="What The Flock Bird Shop">
+    </div>
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#birds">Our Birds</a>
-        <a href="#about">About Us</a>
+        <a href="#birds">Birds</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero" id="home">
-    <div class="hero-text">
-        <h1>Find Your New Feathered Friend</h1>
+
+    <div class="hero-content">
+
+        <img
+            class="hero-logo"
+            src="logo-main.jpeg"
+            alt="What The Flock Bird Shop logo"
+        >
+
+        <h1>Find Your <span>New Feathered Friend</span></h1>
 
         <p>
             Welcome to What The Flock Bird Shop!
-            We specialize in hand-raised companion birds and are especially passionate
-            about medium and large parrots.
+            We specialize in companion parrots and are passionate
+            about helping birds find loving, responsible homes.
         </p>
 
-        <a href="#birds" class="button">Meet Our Birds</a>
+        <a href="#birds" class="button">
+            Meet Our Birds
+        </a>
+
     </div>
+
 </section>
 
-<section id="birds">
-    <h2>Our Birds</h2>
 
-    <p class="intro">
-        We offer a variety of beautiful companion parrots.
-        Our goal is to help each bird find the right home and the right family.
-    </p>
+<!-- BIRDS -->
+
+<section id="birds">
+
+    <div class="section-title">
+
+        <h2>Our <span>Birds</span></h2>
+
+        <p>
+            From playful conures to intelligent large parrots,
+            we're passionate about helping you find the right companion.
+        </p>
+
+    </div>
+
 
     <div class="birds">
 
         <div class="bird-card">
-            <h3>African Greys</h3>
-            <p>
-                Intelligent, social and incredibly rewarding companion birds.
-            </p>
-        </div>
 
-        <div class="bird-card">
-            <h3>Cockatoos</h3>
-            <p>
-                Loving, playful parrots with huge personalities.
-            </p>
-        </div>
+            <div class="bird-icon">🦜</div>
 
-        <div class="bird-card">
-            <h3>Blue-Crowned Conures</h3>
-            <p>
-                Affectionate, intelligent and entertaining companion parrots.
-            </p>
-        </div>
-
-        <div class="bird-card">
             <h3>Conures</h3>
+
             <p>
-                Colorful, energetic parrots that make wonderful companions.
+                Colorful, playful and full of personality.
+                Conures make wonderful companions.
             </p>
+
+        </div>
+
+
+        <div class="bird-card">
+
+            <div class="bird-icon">🦜</div>
+
+            <h3>Blue-Crowned Conures</h3>
+
+            <p>
+                Intelligent, affectionate and entertaining
+                medium-sized companion parrots.
+            </p>
+
+        </div>
+
+
+        <div class="bird-card">
+
+            <div class="bird-icon">🦜</div>
+
+            <h3>African Greys</h3>
+
+            <p>
+                Exceptionally intelligent parrots known
+                for their personalities and remarkable abilities.
+            </p>
+
+        </div>
+
+
+        <div class="bird-card">
+
+            <div class="bird-icon">🦜</div>
+
+            <h3>Cockatoos</h3>
+
+            <p>
+                Big personalities, lots of love and
+                unforgettable companion birds.
+            </p>
+
         </div>
 
     </div>
+
 </section>
+
+
+<!-- ABOUT -->
 
 <section class="about" id="about">
-    <h2>About What The Flock</h2>
 
-    <p class="intro">
-        What The Flock Bird Shop is dedicated to raising and placing quality
-        companion birds with families who are ready to give them the care,
-        attention and love they deserve.
-    </p>
+    <div class="section-title">
+
+        <h2>About <span>What The Flock</span></h2>
+
+    </div>
+
+    <div class="about-content">
+
+        <p>
+            At What The Flock Bird Shop, we believe that bringing
+            a parrot into your family is about more than simply
+            buying a bird.
+        </p>
+
+        <p>
+            Our goal is to raise and place quality companion birds
+            while helping each customer find a bird that fits their
+            family, lifestyle and experience level.
+        </p>
+
+        <p>
+            Whether you're looking for a colorful conure or a
+            larger parrot, we're here to help you every step of
+            the way.
+        </p>
+
+    </div>
+
 </section>
+
+
+<!-- WHY US -->
+
+<section class="why-us">
+
+    <div class="section-title">
+
+        <h2>Why Choose <span>Us?</span></h2>
+
+    </div>
+
+    <div class="reasons">
+
+        <div class="reason">
+
+            <div class="bird-icon">❤️</div>
+
+            <h3>Companion Focused</h3>
+
+            <p>
+                We care about finding the right home
+                for every bird.
+            </p>
+
+        </div>
+
+
+        <div class="reason">
+
+            <div class="bird-icon">🦜</div>
+
+            <h3>Quality Birds</h3>
+
+            <p>
+                We're passionate about raising happy,
+                healthy companion parrots.
+            </p>
+
+        </div>
+
+
+        <div class="reason">
+
+            <div class="bird-icon">🤝</div>
+
+            <h3>Here To Help</h3>
+
+            <p>
+                We're here to answer questions and help
+                new bird owners get started.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
-    <h2>Get In Touch</h2>
+
+    <h2>Ready To Find Your Bird?</h2>
 
     <p>
-        Interested in one of our birds or have questions?
+        Have questions about an available bird?
+        We'd love to hear from you.
     </p>
 
-    <br>
-
     <a href="mailto:YOUR-EMAIL-HERE" class="button">
-        Contact Us
+        Contact What The Flock
     </a>
+
 </section>
 
+
 <footer>
-    <p>© 2026 What The Flock Bird Shop</p>
+
+    <p>
+        © 2026 <strong>What The Flock Bird Shop</strong>
+    </p>
+
 </footer>
 
 </body>
