@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What The Flock Bird Shop</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f6f0;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #263238;
+            color: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 600px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background: #dfe8e2;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #263238;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        section h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .birds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .bird-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .bird-card h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            background: #e9eee9;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            background: #263238;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">What The Flock Bird Shop</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#birds">Our Birds</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Find Your New Feathered Friend</h1>
+
+        <p>
+            Welcome to What The Flock Bird Shop!
+            We specialize in hand-raised companion birds and are especially passionate
+            about medium and large parrots.
+        </p>
+
+        <a href="#birds" class="button">Meet Our Birds</a>
+    </div>
+</section>
+
+<section id="birds">
+    <h2>Our Birds</h2>
+
+    <p class="intro">
+        We offer a variety of beautiful companion parrots.
+        Our goal is to help each bird find the right home and the right family.
+    </p>
+
+    <div class="birds">
+
+        <div class="bird-card">
+            <h3>African Greys</h3>
+            <p>
+                Intelligent, social and incredibly rewarding companion birds.
+            </p>
+        </div>
+
+        <div class="bird-card">
+            <h3>Cockatoos</h3>
+            <p>
+                Loving, playful parrots with huge personalities.
+            </p>
+        </div>
+
+        <div class="bird-card">
+            <h3>Blue-Crowned Conures</h3>
+            <p>
+                Affectionate, intelligent and entertaining companion parrots.
+            </p>
+        </div>
+
+        <div class="bird-card">
+            <h3>Conures</h3>
+            <p>
+                Colorful, energetic parrots that make wonderful companions.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About What The Flock</h2>
+
+    <p class="intro">
+        What The Flock Bird Shop is dedicated to raising and placing quality
+        companion birds with families who are ready to give them the care,
+        attention and love they deserve.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Get In Touch</h2>
+
+    <p>
+        Interested in one of our birds or have questions?
+    </p>
+
+    <br>
+
+    <a href="mailto:YOUR-EMAIL-HERE" class="button">
+        Contact Us
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 What The Flock Bird Shop</p>
+</footer>
+
+</body>
+</html>
