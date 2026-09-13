@@ -189,6 +189,7 @@ nav a:hover {
 }
 
 .review {
+    display: block;
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -199,6 +200,8 @@ nav a:hover {
     border-radius: 15px;
     padding: 30px;
     transition: opacity 0.8s ease;
+    text-decoration: none;
+    color: inherit;
 }
 
 .review.active {
@@ -206,7 +209,9 @@ nav a:hover {
     visibility: visible;
     position: relative;
 }
-
+.review:hover {
+    cursor:pointer;
+}
 .stars {
     color: #a8ff00;
     font-size: 24px;
@@ -494,10 +499,10 @@ footer strong {
 <div class="reviews">
 
     <a
-    href="https://www.facebook.com/profile.php?id=61589161083416"
-    class="review active"
-    target="_blank"
->
+        href="https://www.facebook.com/profile.php?id=61589161083416"
+        class="review active"
+        target="_blank"
+    >
 
         <div class="stars">★★★★★</div>
 
@@ -511,7 +516,11 @@ footer strong {
     </a>
 
 
-    <div class="review">
+    <a
+        href="https://www.facebook.com/profile.php?id=61589161083416"
+        class="review"
+        target="_blank"
+    >
 
         <div class="stars">★★★★★</div>
 
@@ -525,10 +534,14 @@ footer strong {
 
         <strong>— Drew Edwards</strong>
 
-    </div>
+    </a>
 
 
-    <div class="review">
+    <a
+        href="https://www.facebook.com/profile.php?id=61589161083416"
+        class="review"
+        target="_blank"
+    >
 
         <div class="stars">★★★★★</div>
 
@@ -541,8 +554,9 @@ footer strong {
 
         <strong>— Metheus North</strong>
 
-    </div>
+    </a>
 
+</div>
 </div>
     <div class="reasons">
 
@@ -713,7 +727,7 @@ setInterval(() => {
 
     reviews[currentReview].classList.add("active");
 
-}, 5000);
+}, 15000);
 </script>
 
 </body>
