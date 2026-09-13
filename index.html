@@ -78,6 +78,31 @@ nav a {
 nav a:hover {
     color: #a8ff00;
 }
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #050505;
+    border: 1px solid #a8ff00;
+    min-width: 190px;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 15px;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
         /* =========================
            GENERAL SECTIONS
         ========================= */
@@ -357,7 +382,12 @@ footer strong {
         ========================= */
 
         @media (max-width: 700px) {
-.header-logo {
+    header {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .header-logo {
         width: 90px;
     }
 
@@ -368,45 +398,21 @@ footer strong {
     nav {
         gap: 6px;
         flex-wrap: nowrap;
+        justify-content: center;
     }
 
     nav a {
         font-size: 11px;
     }
-            header {
-                flex-direction: row;
-                gap: 12px;
-            }
 
-            nav {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .hero p {
+        font-size: 17px;
+    }
 
-            nav a {
-                font-size: 14px;
-            }
-
-            .hero p {
-                font-size: 17px;
-
-            }
-
-            section {
-                padding: 65px 5%;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
+    section {
+        padding: 65px 5%;
+    }
+}
 <!-- =========================
      HEADER
 ========================= -->
@@ -422,29 +428,21 @@ footer strong {
 
     </div>
 
+</nav>
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Our Birds</a>
 
-    <nav>
-
-        <a href="#about">About</a>
-
-        <a href="birds.html">Our Birds</a>
-
-        <a href="#contact">Contact</a>
-
-        <a href="#">more</a>
-
-    </nav>
-
-
-    <div class="header-bird-logo">
-
-        <img
-            src="logo-main.jpeg"
-            alt="What The Flock Bird Shop"
-        >
-
+        <div class="dropdown-content">
+            <a href="parents.html">Meet the Parents</a>
+            <a href="coming-soon.html">Coming Soon</a>
+            <a href="birds.html">Shop Available Birds</a>
+        </div>
     </div>
 
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#">More</a>
+</nav>
 </header>
 <!-- =========================
      WELCOME
@@ -491,7 +489,7 @@ footer strong {
         <div class="welcome-buttons">
 
             <a href="birds.html" class="contact-button">
-                Meet Our Birds
+                Shop Avaliable Birds
             </a>
 
             <a href="#contact" class="contact-button">
