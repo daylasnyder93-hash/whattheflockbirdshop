@@ -587,5 +587,24 @@ footer strong {
 </footer>
 
 
+<script>
+
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            header.style.transform = "translateY(-100%)";
+        } else {
+            header.style.transform = "translateY(0)";
+        }
+
+        lastScrollY = window.scrollY;
+
+    });
+
+</script>
+
 </body>
 </html>
