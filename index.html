@@ -178,7 +178,53 @@ nav a:hover {
             color: #bbbbbb;
             font-size: 17px;
         }
+/* =========================
+   REVIEWS
+========================= */
 
+.reviews {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.review {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #050505;
+    border: 1px solid #333333;
+    border-radius: 15px;
+    padding: 30px;
+    transition: opacity 0.8s ease;
+}
+
+.review.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.stars {
+    color: #a8ff00;
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.review p {
+    color: #dddddd;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.review strong {
+    color: white;
+    font-size: 17px;
+}
         /* =========================
            WHY US
         ========================= */
@@ -445,7 +491,55 @@ footer strong {
 
     </div>
 
+<div class="reviews">
 
+    <div class="review active">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "Awesome variety of birds. Just purchased one, and she is the
+            sweetest, with a very healthy appearance!"
+        </p>
+
+        <strong>— Rebecca Deviney</strong>
+
+    </div>
+
+
+    <div class="review">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "We got a cockatiel from them, this bird was incredibly healthy
+            and had been handled regularly, she is the sweetest bird ever.
+            We also bought food and a toy which our other bird absolutely
+            loved. It is great to finally have a bird focused shop in the
+            Wichita area!!"
+        </p>
+
+        <strong>— Drew Edwards</strong>
+
+    </div>
+
+
+    <div class="review">
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "These birds are very well taken care of. I met Twinkie and
+            brought her home. The owner is very professional and easy to
+            work with. Thank you so much for adding a wonderful new member
+            to my mini flock."
+        </p>
+
+        <strong>— Metheus North</strong>
+
+    </div>
+
+</div>
     <div class="reasons">
 
 
@@ -604,7 +698,18 @@ footer strong {
         lastScrollY = window.scrollY;
 
     });
+const reviews = document.querySelectorAll(".review");
+let currentReview = 0;
 
+setInterval(() => {
+
+    reviews[currentReview].classList.remove("active");
+
+    currentReview = (currentReview + 1) % reviews.length;
+
+    reviews[currentReview].classList.add("active");
+
+}, 5000);
 </script>
 
 </body>
