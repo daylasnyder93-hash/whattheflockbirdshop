@@ -76,7 +76,7 @@
             font-size: 18px;
         }
 
-        .back-arrow {
+.back-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,13 +84,36 @@
     height: 55px;
     margin-bottom: 20px;
     background: #050505;
-    color: #a8ff00;
-    text-decoration: none;
-    font-size: 40px;
-    font-weight: 900;
-    line-height: 1;
-    padding-bottom: 6px;
     border-radius: 50%;
+}
+
+.back-arrow span {
+    position: relative;
+    width: 26px;
+    height: 8px;
+    background: #a8ff00;
+    border-radius: 3px;
+}
+
+.back-arrow span::before,
+.back-arrow span::after {
+    content: "";
+    position: absolute;
+    left: -3px;
+    width: 18px;
+    height: 8px;
+    background: #a8ff00;
+    border-radius: 3px;
+}
+
+.back-arrow span::before {
+    top: -5px;
+    transform: rotate(-45deg);
+}
+
+.back-arrow span::after {
+    bottom: -5px;
+    transform: rotate(45deg);
 }
 
         .back-button {
@@ -117,7 +140,9 @@
 
     <main class="bird-page">
 
-        <a href="birds.html" class="back-arrow">←</a>
+       <a href="birds.html" class="back-arrow">
+    <span></span>
+</a>
 
         <div class="bird-photo">
 
