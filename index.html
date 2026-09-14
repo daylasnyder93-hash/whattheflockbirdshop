@@ -78,6 +78,31 @@ nav a {
 nav a:hover {
     color: #a8ff00;
 }
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #050505;
+    border: 1px solid #a8ff00;
+    min-width: 190px;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 15px;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}  
         /* =========================
            GENERAL SECTIONS
         ========================= */
