@@ -103,6 +103,30 @@ nav a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }  
+.dropdown-submenu {
+    position: relative;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #050505;
+    border: 1px solid #a8ff00;
+    min-width: 170px;
+    z-index: 1000;
+}
+
+.dropdown-submenu:hover .submenu-content {
+    display: block;
+}
+
+.submenu-content a {
+    display: block;
+    padding: 12px 15px;
+    white-space: nowrap;
+}
         /* =========================
            GENERAL SECTIONS
         ========================= */
@@ -466,7 +490,23 @@ footer strong {
 
         <a href="#contact">Contact</a>
 
-        <a href="#">More</a>
+        <div class="dropdown">
+    <a href="#" class="dropbtn">More</a>
+    <div class="dropdown-content">
+        <a href="about.html">About Us</a>
+
+        <div class="dropdown-submenu">
+            <a href="#">Bird Care & Recipes</a>
+            <div class="submenu-content">
+                <a href="pellet.html">Pellet Recipe</a>
+                <a href="chop.html">Chop Recipe</a>
+                <a href="seed.html">Seed Recipe</a>
+            </div>
+        </div>
+
+        <a href="policies.html">Policies & Contracts</a>
+    </div>
+</div>
 
     </nav>
 
