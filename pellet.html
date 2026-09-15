@@ -46,14 +46,14 @@
         }
 
         .recipe-page {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 110px 20px 60px;
         }
 
         .page-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .page-title h1 {
@@ -68,24 +68,37 @@
             background: #111111;
             border: 1px solid #333333;
             border-radius: 18px;
-            padding: 40px;
-            text-align: center;
+            padding: 35px;
+            margin-bottom: 30px;
         }
 
         .recipe-content h2 {
             color: #a8ff00;
-            font-size: 32px;
+            font-size: 30px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        .recipe-content p {
+        .analysis {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .analysis p {
             color: #dddddd;
             font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .ingredients {
+            color: #dddddd;
+            font-size: 18px;
+            line-height: 1.8;
         }
 
         .back-button {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 10px;
             padding: 14px 28px;
             background: #a8ff00;
             color: #050505;
@@ -132,10 +145,41 @@
 
         <div class="recipe-content">
 
-            <h2>Pellet Recipe</h2>
+            <h2>Guaranteed Analysis</h2>
 
-            <p>
-                Recipe information coming soon.
+            <div class="analysis">
+                <p><strong>Crude Protein:</strong> Min. 16.0%</p>
+                <p><strong>Crude Fat:</strong> Min. 2.0%</p>
+                <p><strong>Crude Fiber:</strong> Max. 9.0%</p>
+                <p><strong>Calcium:</strong> Min. 0.9% — Max. 1.4%</p>
+                <p><strong>Phosphorus:</strong> Min. 0.5%</p>
+                <p><strong>Salt:</strong> Min. 0.1% — Max. 0.6%</p>
+            </div>
+
+        </div>
+
+        <div class="recipe-content">
+
+            <h2>Ingredients</h2>
+
+            <p class="ingredients">
+                Grain Products, Plant Protein Products, Processed Grain By-Products,
+                Calcium Carbonate, Monocalcium Phosphate, Dicalcium Phosphate,
+                Dehydrated Alfalfa Meal, Lignin Sulfonate, Salt,
+                Dehydrated Aspergillus Niger Fermentation Product,
+                Dried Trichoderma reesei Fermentation Product,
+                Manganous Oxide, Manganous Sulfate, Zinc Oxide, Zinc Sulfate,
+                Copper Sulfate, Calcium Iodate, Ferrous Sulfate, Ascorbic Acid,
+                Vitamin A Supplement, Vitamin D3 Supplement, Vitamin E Supplement,
+                Menadione Sodium Bisulfite Complex, Riboflavin Supplement,
+                Niacin, d-Calcium Pantothenate, Thiamine Mononitrate,
+                Vitamin B12, Biotin, Pyridoxine Hydrochloride, Folic Acid,
+                Sodium Selenite, Amorphous Silica, Mixed Tocopherols,
+                Vegetable Oil (one or more of the following: corn, soy, canola,
+                sunflower, cottonseed, palm, coconut), Medium Chain Triglycerides,
+                Ascorbyl Palmitate, Calcium Propionate (Preservative),
+                DL-Methionine, Vitamin E Supplement,
+                Dehydrated Pichia Pastoris Fermentation Extract.
             </p>
 
         </div>
