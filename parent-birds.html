@@ -207,7 +207,10 @@
             color: #aaaaaa;
             margin-top: 10px;
         }
-
+        .photo-name {
+            color:#a8ff00;
+            font-weight: bold;
+        }
         .parent-description {
             text-align: center;
             color: #dddddd;
@@ -388,9 +391,9 @@
       function showPhoto() {
     document.getElementById("galleryImage").src = photos[currentPhoto].src;
 
-    document.getElementById("photoCount").textContent =
-        photos[currentPhoto].name + " — " +
-        (currentPhoto + 1) + " of " + photos.length;
+  document.getElementById("photoCount").innerHTML =
+    '<span class="photo-name">' + photos[currentPhoto].name + '</span> — ' +
+    (currentPhoto + 1) + ' of ' + photos.length;
 }
 
         function nextPhoto() {
