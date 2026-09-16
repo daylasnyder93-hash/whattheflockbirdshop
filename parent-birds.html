@@ -6,7 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Meet the Parents | What The Flock Bird Shop</title>
+.parent-photos {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
 
+.parent-photos div {
+    flex: 1;
+    max-width: 450px;
+}
+
+.parent-photos img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    display: block;
+}
+
+.parent-photos p {
+    color: #a8ff00;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
     <style>
         * {
             box-sizing: border-box;
@@ -155,7 +180,19 @@
         <div class="parent-card">
 
             <h2>Ross &amp; Rachael</h2>
+<div class="parent-photos">
 
+    <div>
+        <img src="Ross.png" alt="Ross">
+        <p>Ross</p>
+    </div>
+
+    <div>
+        <img src="Rachael.png" alt="Rachael">
+        <p>Rachael</p>
+    </div>
+
+</div>
             <p>
                 Ross and Rachael are the proud parents behind some of our
                 goofy little Kakariki babies.
