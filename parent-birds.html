@@ -6,32 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Meet the Parents | What The Flock Bird Shop</title>
-.parent-photos {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 30px;
-}
 
-.parent-photos div {
-    flex: 1;
-    max-width: 450px;
-}
-
-.parent-photos img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: contain;
-    display: block;
-}
-
-.parent-photos p {
-    color: #a8ff00;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-}
     <style>
         * {
             box-sizing: border-box;
@@ -70,61 +45,179 @@
         }
 
         .parents-page {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 100px 20px 60px;
         }
 
         .page-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .page-title h1 {
             font-size: clamp(38px, 6vw, 55px);
-            margin-bottom: 15px;
         }
 
         .page-title h1 span {
             color: #a8ff00;
         }
 
-        .page-title p {
-            color: #bbbbbb;
-            font-size: 19px;
-        }
-
         .parent-card {
             background: #111111;
             border: 1px solid #333333;
             border-radius: 18px;
-            padding: 35px;
-            margin-bottom: 45px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform .25s ease, border-color .25s ease;
+        }
+
+        .parent-card:hover {
+            transform: translateY(-4px);
+            border-color: #a8ff00;
+        }
+
+        .main-parent-photo {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .parent-card-title {
+            padding: 25px;
             text-align: center;
         }
 
-        .parent-card h2 {
+        .parent-card-title h2 {
             color: #a8ff00;
-            font-size: 32px;
-            margin-bottom: 25px;
+            font-size: 34px;
+            margin-bottom: 8px;
         }
 
-        .parent-photo {
-            width: 100%;
-            max-height: 500px;
-            object-fit: contain;
-            margin-bottom: 25px;
+        .parent-card-title p {
+            color: #bbbbbb;
+            font-size: 17px;
         }
 
-        .parent-card p {
-            color: #dddddd;
-            font-size: 18px;
-            margin-bottom: 15px;
+        .click-text {
+            color: #a8ff00 !important;
+            font-weight: bold;
+            margin-top: 12px;
         }
 
         .back-button {
             display: inline-block;
+            margin-top: 40px;
+            padding: 14px 28px;
+            background: #a8ff00;
+            color: #050505;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        /* POPUP */
+
+        .parent-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .92);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .parent-modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #111111;
+            border: 1px solid #333333;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #a8ff00;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .modal-content h2 {
+            text-align: center;
+            color: #a8ff00;
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        .gallery {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: #a8ff00;
+            color: #050505;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .gallery-arrow.left {
+            left: 10px;
+        }
+
+        .gallery-arrow.right {
+            right: 10px;
+        }
+
+        .photo-count {
+            text-align: center;
+            color: #aaaaaa;
             margin-top: 10px;
+        }
+
+        .parent-description {
+            text-align: center;
+            color: #dddddd;
+            font-size: 18px;
+            margin: 30px auto 20px;
+            max-width: 750px;
+        }
+
+        .babies-button {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
             padding: 14px 28px;
             background: #a8ff00;
             color: #050505;
@@ -135,6 +228,7 @@
         }
 
         @media (max-width: 700px) {
+
             .home-logo {
                 width: 90px;
                 top: 15px;
@@ -145,16 +239,26 @@
                 padding: 90px 15px 40px;
             }
 
-            .parent-card {
-                padding: 25px 18px;
+            .main-parent-photo {
+                height: 350px;
             }
 
-            .parent-card h2 {
+            .parent-card-title h2 {
                 font-size: 28px;
             }
 
-            .parent-card p {
-                font-size: 17px;
+            .modal-content {
+                padding: 20px 15px;
+            }
+
+            .gallery-image {
+                height: 350px;
+            }
+
+            .gallery-arrow {
+                width: 42px;
+                height: 42px;
+                font-size: 24px;
             }
         }
     </style>
@@ -171,49 +275,143 @@
 
         <div class="page-title">
             <h1>Meet the <span>Parents</span></h1>
-
-            <p>
-                Get to know some of the parents behind our beautiful babies.
-            </p>
         </div>
 
-        <div class="parent-card">
+        <div class="parent-card" onclick="openParentModal()">
 
-            <h2>Ross &amp; Rachael</h2>
-<div class="parent-photos">
+            <img
+                src="ross-rachael.png"
+                alt="Ross and Rachael"
+                class="main-parent-photo"
+            >
 
-    <div>
-        <img src="Ross.png" alt="Ross">
-        <p>Ross</p>
-    </div>
+            <div class="parent-card-title">
 
-    <div>
-        <img src="Rachael.png" alt="Rachael">
-        <p>Rachael</p>
-    </div>
+                <h2>Ross &amp; Rachael</h2>
 
-</div>
-            <p>
-                Ross and Rachael are the proud parents behind some of our
-                goofy little Kakariki babies.
-            </p>
+                <p>Meet the parents behind some of our Kakariki babies.</p>
 
-            <p>
-                They may be responsible for making some very cute babies,
-                but we're pretty sure the goofiness is genetic!
-            </p>
+                <p class="click-text">
+                    Click to see their photos &amp; learn more
+                </p>
+
+            </div>
 
         </div>
 
         <div style="text-align:center;">
-
             <a href="index.html" class="back-button">
                 Back to Home
+            </a>
+        </div>
+
+    </main>
+
+
+    <!-- PARENT DETAILS POPUP -->
+
+    <div class="parent-modal" id="parentModal">
+
+        <div class="modal-content">
+
+            <span class="close-button" onclick="closeParentModal()">&times;</span>
+
+            <h2>Ross &amp; Rachael</h2>
+
+            <div class="gallery">
+
+                <button class="gallery-arrow left" onclick="previousPhoto()">
+                    &#10094;
+                </button>
+
+                <img
+                    id="galleryImage"
+                    src="ross-rachael.png"
+                    alt="Ross and Rachael"
+                    class="gallery-image"
+                >
+
+                <button class="gallery-arrow right" onclick="nextPhoto()">
+                    &#10095;
+                </button>
+
+            </div>
+
+            <div class="photo-count" id="photoCount">
+                1 of 3
+            </div>
+
+            <div class="parent-description">
+
+                <p>
+                    Ross and Rachael are the proud parents behind some of our
+                    goofy little Kakariki babies.
+                </p>
+
+                <p style="margin-top:15px;">
+                    They may be responsible for making some very cute babies,
+                    but we're pretty sure the goofiness is genetic!
+                </p>
+
+            </div>
+
+            <a href="coming-soon.html" class="babies-button">
+                Meet Their Babies
             </a>
 
         </div>
 
-    </main>
+    </div>
+
+
+    <script>
+
+        const photos = [
+            "ross-rachael.png",
+            "Ross.png",
+            "Rachael.png"
+        ];
+
+        let currentPhoto = 0;
+
+        function openParentModal() {
+            document.getElementById("parentModal").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeParentModal() {
+            document.getElementById("parentModal").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        function showPhoto() {
+            document.getElementById("galleryImage").src = photos[currentPhoto];
+
+            document.getElementById("photoCount").textContent =
+                (currentPhoto + 1) + " of " + photos.length;
+        }
+
+        function nextPhoto() {
+            currentPhoto = (currentPhoto + 1) % photos.length;
+            showPhoto();
+        }
+
+        function previousPhoto() {
+            currentPhoto =
+                (currentPhoto - 1 + photos.length) % photos.length;
+
+            showPhoto();
+        }
+
+        document.getElementById("parentModal").addEventListener("click", function(event) {
+
+            if (event.target === this) {
+                closeParentModal();
+            }
+
+        });
+
+    </script>
 
 </body>
 
