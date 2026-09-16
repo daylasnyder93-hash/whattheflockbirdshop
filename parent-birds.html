@@ -172,7 +172,8 @@
 
         .gallery-image {
             width: 100%;
-            height: 500px;
+            height: auto;
+            max-height: 650px;
             object-fit: contain;
             display: block;
         }
@@ -367,12 +368,11 @@
 
     <script>
 
-        const photos = [
-            "ross-rachael.png",
-            "Ross.png",
-            "Rachael.png"
-        ];
-
+       const photos = [
+    "ross-rachael.png",
+    "Ross-cropped.png",
+    "Rachael-cropped.png"
+];
         let currentPhoto = 0;
 
         function openParentModal() {
