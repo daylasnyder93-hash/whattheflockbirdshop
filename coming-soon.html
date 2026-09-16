@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Coming Soon | What The Flock Bird Shop</title>
+    <title>Kakariki Babies | What The Flock Bird Shop</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -26,7 +28,7 @@
             left: 20px;
             width: 120px;
             z-index: 9999;
-            display: block;
+            text-decoration: none;
         }
 
         .home-logo img {
@@ -34,55 +36,93 @@
             display: block;
         }
 
-        .coming-page {
-            max-width: 1100px;
+        .home-logo span {
+            display: block;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: -10px;
+        }
+
+        .babies-page {
+            max-width: 950px;
             margin: 0 auto;
-            padding: 100px 20px 60px;
+            padding: 110px 20px 60px;
         }
 
         .page-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 45px;
         }
 
         .page-title h1 {
             font-size: clamp(38px, 6vw, 55px);
-            margin-bottom: 15px;
         }
 
         .page-title h1 span {
             color: #a8ff00;
         }
 
-        .page-title p {
-            color: #bbbbbb;
-            font-size: 19px;
-        }
-
-        .coming-box {
+        .baby-card {
             background: #111111;
             border: 1px solid #333333;
             border-radius: 18px;
-            padding: 60px 30px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px;
+            overflow: hidden;
+            margin-bottom: 35px;
         }
 
-        .coming-box h2 {
+        .baby-photo {
+            width: 100%;
+            background: #111111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .baby-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .baby-info {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .baby-info h2 {
             color: #a8ff00;
-            font-size: 32px;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 23px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .coming-box p {
+        .baby-description {
             color: #dddddd;
             font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .parent-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #a8ff00;
+            color: #050505;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 17px;
         }
 
         .back-button {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 10px;
             padding: 14px 28px;
             background: #a8ff00;
             color: #050505;
@@ -93,61 +133,86 @@
         }
 
         @media (max-width: 700px) {
+
             .home-logo {
                 width: 90px;
                 top: 15px;
                 left: 15px;
             }
 
-            .coming-page {
+            .babies-page {
                 padding: 90px 15px 40px;
             }
 
-            .coming-box {
-                padding: 45px 20px;
+            .baby-info {
+                padding: 25px 18px;
             }
+
+            .baby-info h2 {
+                font-size: 28px;
+            }
+
+            .baby-description {
+                font-size: 17px;
+            }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
-<a href="index.html" class="home-logo">
-    <img src="image1-transparent.png" alt="What The Flock Bird Shop">
-</a>
+    <a href="index.html" class="home-logo">
+        <img src="image1-transparent.png" alt="What The Flock Bird Shop">
+        <span>Home</span>
+    </a>
 
-<main class="coming-page">
+    <main class="babies-page">
 
-    <div class="page-title">
-        <h1>
-            Coming <span>Soon</span>
-        </h1>
+        <div class="page-title">
+            <h1>Kakariki <span>Babies</span></h1>
+        </div>
 
-        <p>
-            New birds will be joining our flock soon!
-        </p>
-    </div>
+        <div class="baby-card">
 
-    <div class="coming-box">
+            <div class="baby-photo">
+                <img src="Ross and Rachael babies.jpeg" alt="Kakariki babies">
+            </div>
 
-        <h2>Stay Tuned!</h2>
+            <div class="baby-info">
 
-        <p>
-            We're always working on bringing new feathered friends
-            to What The Flock Bird Shop.
-        </p>
+                <h2>Kakariki Babies</h2>
 
-    </div>
+                <div class="price">
+                    Price Coming Soon
+                </div>
 
-    <div style="text-align:center;">
+                <p class="baby-description">
+                    These Kakariki babies are a bunch of goofy little characters!
+                    They love to play, explore, and make sure there is always something
+                    interesting going on. They also have a serious love for fruit, so
+                    don't be surprised if these little goofballs come running when they
+                    see the fruit bowl!
+                </p>
 
-        <a href="index.html" class="back-button">
-            Back to Home
-        </a>
+                <a href="parents.html" class="parent-button">
+                    Meet Their Parents
+                </a>
 
-    </div>
+            </div>
 
-</main>
+        </div>
+
+        <div style="text-align:center;">
+            <a href="index.html" class="back-button">
+                Back to Home
+            </a>
+        </div>
+
+    </main>
 
 </body>
+
 </html>
