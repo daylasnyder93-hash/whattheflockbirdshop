@@ -369,9 +369,9 @@
     <script>
 
        const photos = [
-    "ross-rachael.png",
-    "Ross-cropped.png",
-    "Rachael-cropped.png"
+    { src: "ross-rachael.png", name: "Ross & Rachael" },
+    { src: "Ross-cropped.png", name: "Ross" },
+    { src: "Rachael-cropped.png", name: "Rachael" }
 ];
         let currentPhoto = 0;
 
@@ -385,12 +385,13 @@
             document.body.style.overflow = "";
         }
 
-        function showPhoto() {
-            document.getElementById("galleryImage").src = photos[currentPhoto];
+      function showPhoto() {
+    document.getElementById("galleryImage").src = photos[currentPhoto].src;
 
-            document.getElementById("photoCount").textContent =
-                (currentPhoto + 1) + " of " + photos.length;
-        }
+    document.getElementById("photoCount").textContent =
+        photos[currentPhoto].name + " — " +
+        (currentPhoto + 1) + " of " + photos.length;
+}
 
         function nextPhoto() {
             currentPhoto = (currentPhoto + 1) % photos.length;
