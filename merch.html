@@ -9,7 +9,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bird Merch | What The Flock Bird Shop</title>
+.home-link {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+.home-link img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.home-link:hover {
+    color: #a8ff00;
+}
+
+.merch-card {
+    border-radius: 12px;
+}
     <style>
 
         body {
@@ -77,6 +101,7 @@
             color: #050505;
             text-decoration: none;
             font-weight: bold;
+            border-radius: 12px;
         }
 
         @media (max-width: 600px) {
@@ -92,6 +117,12 @@
 </head>
 
 <body>
+
+
+    <a href="index.html" class="home-link">
+        <img src="image1-transparent.png" alt="Home">
+        <span>Home</span>
+    </a>
 
     <main class="page">
 
