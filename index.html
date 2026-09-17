@@ -103,30 +103,7 @@ nav a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }  
-.dropdown-submenu {
-    position: relative;
-}
 
-.submenu-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    background: #050505;
-    border: 1px solid #a8ff00;
-    min-width: 170px;
-    z-index: 1000;
-}
-
-.dropdown-submenu:hover .submenu-content {
-    display: block;
-}
-
-.submenu-content a {
-    display: block;
-    padding: 12px 15px;
-    white-space: nowrap;
-}
         /* =========================
            GENERAL SECTIONS
         ========================= */
@@ -474,43 +451,40 @@ footer strong {
     </div>
 
 
-    <nav>
+<nav>
 
-        <a href="#about">About</a>
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Our Birds</a>
 
-        <div class="dropdown">
-    <a href="#" class="dropbtn">Our Birds</a>
-
-    <div class="dropdown-content">
-        <a href="parent-birds.html">Meet the Parents</a>
-        <a href="coming-soon.html">Coming Soon</a>
-        <a href="birds.html">Shop Available Birds</a>
-    </div>
-</div>
-
-        <a href="#contact">Contact</a>
-
-       <div class="dropdown">
-    <a href="#" class="dropbtn">More</a>
-
-    <div class="dropdown-content">
-
-        <div class="dropdown-submenu">
-            <a href="recipes.html">Bird Care & Recipes</a>
-
-            <div class="submenu-content">
-                <a href="pellet.html">Pellet Recipe</a>
-                <a href="chop.html">Chop Recipe</a>
-                <a href="seed.html">Seed Recipe</a>
-            </div>
+        <div class="dropdown-content">
+            <a href="parent-birds.html">Meet the Parents</a>
+            <a href="coming-soon.html">Coming Soon</a>
+            <a href="birds.html">Shop Available Birds</a>
         </div>
-
-        <a href="policies.html">Policies & Contracts</a>
-
     </div>
-</div>
 
-    </nav>
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Bird Merch.</a>
+
+        <div class="dropdown-content">
+            <a href="pellet.html">Pellet Recipe</a>
+            <a href="chop.html">Chop Recipe</a>
+            <a href="seed.html">Seed Recipe</a>
+            <a href="toys.html">Toys</a>
+        </div>
+    </div>
+
+    <a href="#contact">Contact</a>
+
+    <div class="dropdown">
+        <a href="#" class="dropbtn">More</a>
+
+        <div class="dropdown-content">
+            <a href="policies.html">Policies & Contracts</a>
+        </div>
+    </div>
+
+</nav>
 
 
     <div class="header-bird-logo">
