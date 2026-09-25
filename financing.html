@@ -10,12 +10,106 @@
 
     <title>Financing | What The Flock Bird Shop</title>
 
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+        }
+
+        .financing-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #a8ff00;
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .financing-subtitle {
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+
+        .financing-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .financing-option {
+            background: #111;
+            border-radius: 30px;
+            padding: 40px 25px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s ease;
+        }
+
+        .financing-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .financing-option h2 {
+            color: #a8ff00;
+            margin-bottom: 15px;
+        }
+
+        .financing-option p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 800px) {
+            .financing-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <!-- YOUR FINANCING CONTENT WILL GO HERE -->
+    <main class="financing-page">
 
+        <h1>Financing</h1>
+
+        <p class="financing-subtitle">
+            We offer several financing options to help make bringing home your new feathered family member easier.
+        </p>
+
+        <div class="financing-options">
+
+            <a href="afterpay.html" class="financing-option">
+                <h2>Afterpay</h2>
+                <p>
+                    Click to learn more about financing your purchase through Afterpay.
+                </p>
+            </a>
+
+            <a href="affirm.html" class="financing-option">
+                <h2>Affirm</h2>
+                <p>
+                    Click to learn more about financing your purchase through Affirm.
+                </p>
+            </a>
+
+            <a href="in-house-financing.html" class="financing-option">
+                <h2>In-House Financing</h2>
+                <p>
+                    Click to learn more about our in-house financing options.
+                </p>
+            </a>
+
+        </div>
+
+    </main>
 
 </body>
 
