@@ -2,25 +2,159 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" type="image/png" href="image1-transparent.png">
 
     <title>In-House Financing | What The Flock Bird Shop</title>
 
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .home-button img {
+            width: 120px;
+            height: auto;
+            display: block;
+        }
+
+        .page {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 110px 20px 60px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title h1 {
+            font-size: clamp(38px, 6vw, 55px);
+            color: #a8ff00;
+        }
+
+        .page-title p {
+            color: #bbbbbb;
+            font-size: 19px;
+            margin-top: 15px;
+        }
+
+        .info-section {
+            background: #111111;
+            border: 1px solid #333333;
+            border-radius: 18px;
+            padding: 35px;
+            margin-bottom: 25px;
+        }
+
+        .info-section h2 {
+            color: #a8ff00;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .info-section p {
+            color: #dddddd;
+            font-size: 18px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 28px;
+            background: #a8ff00;
+            color: #050505;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.25s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 700px) {
+
+            .home-button {
+                top: 15px;
+                left: 15px;
+            }
+
+            .home-button img {
+                width: 90px;
+            }
+
+            .page {
+                padding: 90px 15px 40px;
+            }
+
+            .info-section {
+                padding: 25px 18px;
+            }
+
+            .info-section h2 {
+                font-size: 25px;
+            }
+
+            .info-section p {
+                font-size: 17px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <h1>In-House Financing</h1>
+    <a href="index.html" class="home-button">
+        <img src="image1-transparent.png" alt="What The Flock Bird Shop">
+    </a>
 
-    <p>
-        In-house financing information coming soon.
-    </p>
+    <main class="page">
 
-    <a href="financing.html">Back to Financing</a>
+        <div class="page-title">
+            <h1>In-House Financing</h1>
+            <p>Financing Options</p>
+        </div>
+
+        <div class="info-section">
+
+            <h2>In-House Financing</h2>
+
+            <p>
+                In-house financing information will be added here.
+            </p>
+
+        </div>
+
+        <div style="text-align: center;">
+            <a href="financing.html" class="back-button">
+                Back to Financing
+            </a>
+        </div>
+
+    </main>
 
 </body>
 
