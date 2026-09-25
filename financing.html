@@ -11,6 +11,18 @@
     <title>Financing | What The Flock Bird Shop</title>
 
     <style>
+        .home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.home-button img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -37,9 +49,11 @@
         }
 
         .financing-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 25px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .financing-option {
@@ -64,18 +78,14 @@
             font-size: 16px;
             line-height: 1.5;
         }
-
-        @media (max-width: 800px) {
-            .financing-options {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 
 </head>
 
 <body>
-
+<a href="index.html" class="home-button">
+    <img src="image1-transparent.png" alt="What The Flock Bird Shop">
+</a>
     <main class="financing-page">
 
         <h1>Financing</h1>
