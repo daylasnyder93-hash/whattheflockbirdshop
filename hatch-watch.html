@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image1-transparent.png">
+
+    <title>Hatch Watch | What The Flock Bird Shop</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .home-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            z-index: 9999;
+            text-decoration: none;
+        }
+
+        .home-logo img {
+            width: 100%;
+            display: block;
+        }
+
+        .home-logo span {
+            display: block;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: -10px;
+        }
+
+        .babies-page {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 110px 20px 60px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .page-title h1 {
+            font-size: clamp(38px, 6vw, 55px);
+        }
+
+        .page-title h1 span {
+            color: #a8ff00;
+        }
+
+        .baby-card {
+            background: #111111;
+            border: 1px solid #333333;
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 35px;
+        }
+
+        .baby-photo {
+            width: 100%;
+            background: #111111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .baby-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .baby-info {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .baby-info h2 {
+            color: #a8ff00;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .baby-description {
+            color: #dddddd;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .parent-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #a8ff00;
+            color: #050505;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 14px 28px;
+            background: #a8ff00;
+            color: #050505;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        @media (max-width: 700px) {
+
+            .home-logo {
+                width: 90px;
+                top: 15px;
+                left: 15px;
+            }
+
+            .babies-page {
+                padding: 90px 15px 40px;
+            }
+
+            .baby-info {
+                padding: 25px 18px;
+            }
+
+            .baby-info h2 {
+                font-size: 28px;
+            }
+
+            .baby-description {
+                font-size: 17px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <a href="index.html" class="home-logo">
+        <img src="image1-transparent.png" alt="What The Flock Bird Shop">
+        <span>Home</span>
+    </a>
+
+    <main class="babies-page">
+
+        <div class="page-title">
+            <h1>Hatch <span>Watch</span></h1>
+        </div>
+
+        <!-- KAKARIKI BABIES -->
+
+        <div class="baby-card">
+
+            <div class="baby-photo">
+                <img src="kakarikis .png" alt="Kakariki Babies">
+            </div>
+
+            <div class="baby-info">
+
+                <h2>Kakariki Babies</h2>
+
+                <div class="price">
+                    Price Coming Soon
+                </div>
+
+                <p class="baby-description">
+                    These Kakariki babies are a bunch of goofy little characters!
+                    They love to play, explore, and make sure there is always something
+                    interesting going on. They also have a serious love for fruit, so
+                    don't be surprised if these little goofballs come running when they
+                    see the fruit bowl!
+                </p>
+
+                <a href="parent-birds.html" class="parent-button">
+                    Meet Their Parents
+                </a>
+
+            </div>
+
+        </div>
+
+        <div style="text-align:center;">
+            <a href="index.html" class="back-button">
+                Back to Home
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
