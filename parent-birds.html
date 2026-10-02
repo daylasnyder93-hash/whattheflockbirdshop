@@ -22,6 +22,8 @@
             line-height: 1.6;
         }
 
+        /* HOME LOGO */
+
         .home-logo {
             position: fixed;
             top: 20px;
@@ -45,6 +47,8 @@
             margin-top: -10px;
         }
 
+        /* MAIN PAGE */
+
         .parents-page {
             max-width: 500px;
             margin: 0 auto;
@@ -64,16 +68,22 @@
             color: #a8ff00;
         }
 
+        /* PARENT CARDS */
+
         .parent-card {
             background: #111111;
             border: 1px solid #333333;
             border-radius: 18px;
             overflow: hidden;
-            cursor: pointer;
+            margin-bottom: 30px;
             transition: transform .25s ease, border-color .25s ease;
         }
 
-        .parent-card:hover {
+        .parent-card.clickable {
+            cursor: pointer;
+        }
+
+        .parent-card.clickable:hover {
             transform: translateY(-4px);
             border-color: #a8ff00;
         }
@@ -108,9 +118,11 @@
             margin-top: 12px;
         }
 
+        /* BACK BUTTON */
+
         .back-button {
             display: inline-block;
-            margin-top: 40px;
+            margin-top: 10px;
             padding: 14px 28px;
             background: #a8ff00;
             color: #050505;
@@ -164,6 +176,8 @@
             margin-bottom: 25px;
         }
 
+        /* GALLERY */
+
         .gallery {
             position: relative;
             display: flex;
@@ -208,10 +222,14 @@
             color: #aaaaaa;
             margin-top: 10px;
         }
+
         .photo-name {
-            color:#a8ff00;
+            color: #a8ff00;
             font-weight: bold;
         }
+
+        /* PARENT DESCRIPTION */
+
         .parent-description {
             text-align: center;
             color: #a8ff00;
@@ -219,6 +237,8 @@
             margin: 30px auto 20px;
             max-width: 750px;
         }
+
+        /* MEET THEIR BABIES BUTTON */
 
         .babies-button {
             display: block;
@@ -232,6 +252,8 @@
             font-weight: bold;
             font-size: 17px;
         }
+
+        /* MOBILE */
 
         @media (max-width: 700px) {
 
@@ -272,10 +294,15 @@
 
 <body>
 
+    <!-- HOME LOGO -->
+
     <a href="index.html" class="home-logo">
         <img src="image1-transparent.png" alt="What The Flock Bird Shop">
         <span>Home</span>
     </a>
+
+
+    <!-- MAIN PAGE -->
 
     <main class="parents-page">
 
@@ -283,7 +310,10 @@
             <h1>Meet the <span>Parents</span></h1>
         </div>
 
-        <div class="parent-card" onclick="openParentModal()">
+
+        <!-- ROSS & RACHAEL -->
+
+        <div class="parent-card clickable" onclick="openParentModal()">
 
             <img
                 src="ross-rachael.png"
@@ -295,7 +325,9 @@
 
                 <h2>Ross &amp; Rachael</h2>
 
-                <p>Meet the parents behind some of our Kakariki babies.</p>
+                <p>
+                    Meet the parents behind some of our Kakariki babies.
+                </p>
 
                 <p class="click-text">
                     Click to see their photos &amp; learn more
@@ -304,12 +336,34 @@
             </div>
 
         </div>
+
+
+        <!-- SHELDON & AMY -->
+
         <div class="parent-card">
-            <img src="Sheldon and Amy.png" alt="Sheldon and Amy">
-            <h2>Sheldon & Amy</h2>
+
+            <img
+                src="Sheldon and Amy.png"
+                alt="Sheldon and Amy"
+                class="main-parent-photo"
+            >
+
+            <div class="parent-card-title">
+
+                <h2>Sheldon &amp; Amy</h2>
+
+                <p>
+                    Meet Sheldon and Amy, one of our parent pairs.
+                </p>
+
+            </div>
+
         </div>
-    </div>
-        <div style="text-align:center;">
+
+
+        <!-- BACK TO HOME -->
+
+        <div style="text-align: center;">
             <a href="index.html" class="back-button">
                 Back to Home
             </a>
@@ -318,19 +372,28 @@
     </main>
 
 
-    <!-- PARENT DETAILS POPUP -->
+    <!-- ROSS & RACHAEL POPUP -->
 
     <div class="parent-modal" id="parentModal">
 
         <div class="modal-content">
 
-            <span class="close-button" onclick="closeParentModal()">&times;</span>
+            <span class="close-button" onclick="closeParentModal()">
+                &times;
+            </span>
 
             <h2>Ross &amp; Rachael</h2>
 
+
+            <!-- PHOTO GALLERY -->
+
             <div class="gallery">
 
-                <button class="gallery-arrow left" onclick="previousPhoto()">
+                <button
+                    class="gallery-arrow left"
+                    onclick="previousPhoto()"
+                    aria-label="Previous photo"
+                >
                     &#10094;
                 </button>
 
@@ -341,15 +404,25 @@
                     class="gallery-image"
                 >
 
-                <button class="gallery-arrow right" onclick="nextPhoto()">
+                <button
+                    class="gallery-arrow right"
+                    onclick="nextPhoto()"
+                    aria-label="Next photo"
+                >
                     &#10095;
                 </button>
 
             </div>
 
+
+            <!-- PHOTO COUNT -->
+
             <div class="photo-count" id="photoCount">
                 1 of 3
             </div>
+
+
+            <!-- DESCRIPTION -->
 
             <div class="parent-description">
 
@@ -358,12 +431,15 @@
                     goofy little Kakariki babies.
                 </p>
 
-                <p style="margin-top:15px;">
+                <p style="margin-top: 15px;">
                     They may be responsible for making some very cute babies,
                     but we're pretty sure the goofiness is genetic!
                 </p>
 
             </div>
+
+
+            <!-- MEET THEIR BABIES -->
 
             <a href="coming-soon.html" class="babies-button">
                 Meet Their Babies
@@ -374,37 +450,62 @@
     </div>
 
 
+    <!-- JAVASCRIPT -->
+
     <script>
 
-      const photos = [
-    { src: "ross-rachael.png", name: "Ross & Rachael" },
-    { src: "breeders/Ross-cropped.png", name: "Ross" },
-    { src: "breeders/Rachael-cropped.png", name: "Rachael" }
-];
+        const photos = [
+            {
+                src: "ross-rachael.png",
+                name: "Ross & Rachael"
+            },
+            {
+                src: "breeders/Ross-cropped.png",
+                name: "Ross"
+            },
+            {
+                src: "breeders/Rachael-cropped.png",
+                name: "Rachael"
+            }
+        ];
+
         let currentPhoto = 0;
+
 
         function openParentModal() {
             document.getElementById("parentModal").classList.add("active");
             document.body.style.overflow = "hidden";
         }
 
+
         function closeParentModal() {
             document.getElementById("parentModal").classList.remove("active");
             document.body.style.overflow = "";
         }
 
-      function showPhoto() {
-    document.getElementById("galleryImage").src = photos[currentPhoto].src;
 
-  document.getElementById("photoCount").innerHTML =
-    '<span class="photo-name">' + photos[currentPhoto].name + '</span> — ' +
-    (currentPhoto + 1) + ' of ' + photos.length;
-}
+        function showPhoto() {
+
+            document.getElementById("galleryImage").src =
+                photos[currentPhoto].src;
+
+            document.getElementById("photoCount").innerHTML =
+                '<span class="photo-name">' +
+                photos[currentPhoto].name +
+                '</span> — ' +
+                (currentPhoto + 1) +
+                ' of ' +
+                photos.length;
+        }
+
 
         function nextPhoto() {
-            currentPhoto = (currentPhoto + 1) % photos.length;
+            currentPhoto =
+                (currentPhoto + 1) % photos.length;
+
             showPhoto();
         }
+
 
         function previousPhoto() {
             currentPhoto =
@@ -413,16 +514,20 @@
             showPhoto();
         }
 
-        document.getElementById("parentModal").addEventListener("click", function(event) {
 
-            if (event.target === this) {
-                closeParentModal();
-            }
+        document
+            .getElementById("parentModal")
+            .addEventListener("click", function(event) {
 
-        });
+                if (event.target === this) {
+                    closeParentModal();
+                }
+
+            });
 
     </script>
 
 </body>
 
 </html>
+```
