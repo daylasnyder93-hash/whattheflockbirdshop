@@ -65,22 +65,19 @@
             color: #a8ff00;
         }
 
-        .baby-card {
-            background: #111111;
-            border: 1px solid #333333;
-            border-radius: 18px;
-            overflow: hidden;
-            margin-bottom: 35px;
-        }
-        .baby-card {
-            background: #111111;
-            border: 1px solid #333333;
-            border-radius: 18px;
-            overflow: hidden;
-            margin-bottom: 35px;
-        }
+.baby-card {
+    background: #111111;
+    border: 1px solid #333333;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 35px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
         .baby-photo {
             width: 100%;
+            height: 350px;
             background: #111111;
             display: flex;
             justify-content: center;
@@ -89,7 +86,8 @@
 
         .baby-photo img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain;
             display: block;
         }
 
