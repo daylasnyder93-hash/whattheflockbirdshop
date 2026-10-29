@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="image1-transparent.png">
-
     <title>Meet the Parents | What The Flock Bird Shop</title>
 
     <style>
@@ -21,8 +21,6 @@
             color: white;
             line-height: 1.6;
         }
-
-        /* HOME LOGO */
 
         .home-logo {
             position: fixed;
@@ -47,8 +45,6 @@
             margin-top: -10px;
         }
 
-        /* MAIN PAGE */
-
         .parents-page {
             max-width: 500px;
             margin: 0 auto;
@@ -67,8 +63,6 @@
         .page-title h1 span {
             color: #a8ff00;
         }
-
-        /* PARENT CARDS */
 
         .parent-card {
             background: #111111;
@@ -118,8 +112,6 @@
             margin-top: 12px;
         }
 
-        /* BACK BUTTON */
-
         .back-button {
             display: inline-block;
             margin-top: 10px;
@@ -131,8 +123,6 @@
             font-weight: bold;
             font-size: 17px;
         }
-
-        /* POPUP */
 
         .parent-modal {
             display: none;
@@ -175,8 +165,6 @@
             font-size: 36px;
             margin-bottom: 25px;
         }
-
-        /* GALLERY */
 
         .gallery {
             position: relative;
@@ -228,8 +216,6 @@
             font-weight: bold;
         }
 
-        /* PARENT DESCRIPTION */
-
         .parent-description {
             text-align: center;
             color: #a8ff00;
@@ -237,8 +223,6 @@
             margin: 30px auto 20px;
             max-width: 750px;
         }
-
-        /* MEET THEIR BABIES BUTTON */
 
         .babies-button {
             display: block;
@@ -253,10 +237,7 @@
             font-size: 17px;
         }
 
-        /* MOBILE */
-
         @media (max-width: 700px) {
-
             .home-logo {
                 width: 90px;
                 top: 15px;
@@ -294,15 +275,10 @@
 
 <body>
 
-    <!-- HOME LOGO -->
-
     <a href="index.html" class="home-logo">
         <img src="image1-transparent.png" alt="What The Flock Bird Shop">
         <span>Home</span>
     </a>
-
-
-    <!-- MAIN PAGE -->
 
     <main class="parents-page">
 
@@ -310,226 +286,217 @@
             <h1>Meet the <span>Parents</span></h1>
         </div>
 
-
         <!-- ROSS & RACHAEL -->
-
         <div class="parent-card clickable" onclick="openParentModal()">
-
-            <img
-                src="ross-rachael.png"
-                alt="Ross and Rachael"
-                class="main-parent-photo"
-            >
+            <img src="ross-rachael.png"
+                 alt="Ross and Rachael"
+                 class="main-parent-photo">
 
             <div class="parent-card-title">
-
                 <h2>Ross &amp; Rachael</h2>
-
-                <p>
-                    Meet the parents behind some of our Kakariki babies.
-                </p>
-
-                <p class="click-text">
-                    Click to see their photos &amp; learn more
-                </p>
-
+                <p>Meet the parents behind some of our Kakariki babies.</p>
+                <p class="click-text">Click to see their photos &amp; learn more</p>
             </div>
-
         </div>
-
 
         <!-- SHELDON & AMY -->
+        <div class="parent-card clickable"
+             onclick="window.location.href='sheldon-amy.html'">
 
-        <div class="parent-card clickable" onclick="window.location.href='sheldon-amy.html'">
-
-            <img
-                src="Sheldon and Amy.png"
-                alt="Sheldon and Amy"
-                class="main-parent-photo"
-            >
+            <img src="Sheldon and Amy.png"
+                 alt="Sheldon and Amy"
+                 class="main-parent-photo">
 
             <div class="parent-card-title">
-
                 <h2>Sheldon &amp; Amy</h2>
-<p>
-                    Meet the parents behind some of our African Gray babies.
-                </p>
-
-                <p class="click-text">
-                    Click to see their photos &amp; learn more
-                </p>
+                <p>Meet the parents behind some of our African Gray babies.</p>
+                <p class="click-text">Click to see their photos &amp; learn more</p>
             </div>
-
         </div>
 
+        <!-- DANNY & KATHERINE -->
+        <div class="parent-card clickable"
+             onclick="openDannyKatherineModal()">
 
-        <!-- BACK TO HOME -->
+            <img src="Kat and Dan snuggle.png"
+                 alt="Danny and Katherine cuddling together"
+                 class="main-parent-photo">
+
+            <div class="parent-card-title">
+                <h2>Danny &amp; Katherine</h2>
+                <p>Meet the parents behind some of our Green-Cheeked Conure babies.</p>
+                <p class="click-text">Click to see their photos &amp; learn more</p>
+            </div>
+        </div>
 
         <div style="text-align: center;">
-            <a href="index.html" class="back-button">
-                Back to Home
-            </a>
+            <a href="index.html" class="back-button">Back to Home</a>
         </div>
 
     </main>
 
-
-    <!-- ROSS & RACHAEL POPUP -->
-
+    <!-- ROSS & RACHAEL GALLERY -->
     <div class="parent-modal" id="parentModal">
-
         <div class="modal-content">
 
-            <span class="close-button" onclick="closeParentModal()">
-                &times;
-            </span>
-
+            <span class="close-button" onclick="closeParentModal()">&times;</span>
             <h2>Ross &amp; Rachael</h2>
 
-
-            <!-- PHOTO GALLERY -->
-
             <div class="gallery">
+                <button class="gallery-arrow left"
+                        onclick="previousPhoto()"
+                        aria-label="Previous photo">&#10094;</button>
 
-                <button
-                    class="gallery-arrow left"
-                    onclick="previousPhoto()"
-                    aria-label="Previous photo"
-                >
-                    &#10094;
-                </button>
+                <img id="galleryImage"
+                     src="ross-rachael.png"
+                     alt="Ross and Rachael"
+                     class="gallery-image">
 
-                <img
-                    id="galleryImage"
-                    src="ross-rachael.png"
-                    alt="Ross and Rachael"
-                    class="gallery-image"
-                >
-
-                <button
-                    class="gallery-arrow right"
-                    onclick="nextPhoto()"
-                    aria-label="Next photo"
-                >
-                    &#10095;
-                </button>
-
+                <button class="gallery-arrow right"
+                        onclick="nextPhoto()"
+                        aria-label="Next photo">&#10095;</button>
             </div>
 
-
-            <!-- PHOTO COUNT -->
-
-            <div class="photo-count" id="photoCount">
-                1 of 3
-            </div>
-
-
-            <!-- DESCRIPTION -->
+            <div class="photo-count" id="photoCount">1 of 3</div>
 
             <div class="parent-description">
-
-                <p>
-                    Ross and Rachael are the proud parents behind some of our
-                    goofy little Kakariki babies.
-                </p>
-
+                <p>Ross and Rachael are the proud parents behind some of our goofy little Kakariki babies.</p>
                 <p style="margin-top: 15px;">
                     They may be responsible for making some very cute babies,
                     but we're pretty sure the goofiness is genetic!
                 </p>
-
             </div>
 
-
-            <!-- MEET THEIR BABIES -->
-
-            <a href="coming-soon.html" class="babies-button">
-                Meet Their Babies
-            </a>
-
+            <a href="coming-soon.html" class="babies-button">Meet Their Babies</a>
         </div>
-
     </div>
 
+    <!-- DANNY & KATHERINE GALLERY -->
+    <div class="parent-modal" id="dannyKatherineModal">
+        <div class="modal-content">
 
-    <!-- JAVASCRIPT -->
+            <span class="close-button"
+                  onclick="closeDannyKatherineModal()">&times;</span>
+
+            <h2>Danny &amp; Katherine</h2>
+
+            <div class="gallery">
+                <button class="gallery-arrow left"
+                        onclick="previousDannyKatherinePhoto()"
+                        aria-label="Previous photo">&#10094;</button>
+
+                <img id="dannyKatherineGalleryImage"
+                     src="Kat and Dan snuggle.png"
+                     alt="Danny and Katherine cuddling together"
+                     class="gallery-image">
+
+                <button class="gallery-arrow right"
+                        onclick="nextDannyKatherinePhoto()"
+                        aria-label="Next photo">&#10095;</button>
+            </div>
+
+            <div class="photo-count" id="dannyKatherinePhotoCount">
+                <span class="photo-name">Danny &amp; Katherine</span> — 1 of 4
+            </div>
+
+            <div class="parent-description">
+                <p>Danny and Katherine are our Green-Cheeked Conure parents.</p>
+            </div>
+
+            <a href="coming-soon.html" class="babies-button">Meet Their Babies</a>
+        </div>
+    </div>
 
     <script>
-
+        // ROSS & RACHAEL PHOTOS
         const photos = [
-            {
-                src: "ross-rachael.png",
-                name: "Ross & Rachael"
-            },
-            {
-                src: "breeders/Ross-cropped.png",
-                name: "Ross"
-            },
-            {
-                src: "breeders/Rachael-cropped.png",
-                name: "Rachael"
-            }
+            { src: "ross-rachael.png", name: "Ross & Rachael" },
+            { src: "breeders/Ross-cropped.png", name: "Ross" },
+            { src: "breeders/Rachael-cropped.png", name: "Rachael" }
         ];
 
         let currentPhoto = 0;
-
 
         function openParentModal() {
             document.getElementById("parentModal").classList.add("active");
             document.body.style.overflow = "hidden";
         }
 
-
         function closeParentModal() {
             document.getElementById("parentModal").classList.remove("active");
             document.body.style.overflow = "";
         }
 
-
         function showPhoto() {
-
-            document.getElementById("galleryImage").src =
-                photos[currentPhoto].src;
-
+            document.getElementById("galleryImage").src = photos[currentPhoto].src;
             document.getElementById("photoCount").innerHTML =
-                '<span class="photo-name">' +
-                photos[currentPhoto].name +
-                '</span> — ' +
-                (currentPhoto + 1) +
-                ' of ' +
-                photos.length;
+                '<span class="photo-name">' + photos[currentPhoto].name +
+                '</span> — ' + (currentPhoto + 1) + ' of ' + photos.length;
         }
-
 
         function nextPhoto() {
-            currentPhoto =
-                (currentPhoto + 1) % photos.length;
-
+            currentPhoto = (currentPhoto + 1) % photos.length;
             showPhoto();
         }
-
 
         function previousPhoto() {
-            currentPhoto =
-                (currentPhoto - 1 + photos.length) % photos.length;
-
+            currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
             showPhoto();
         }
 
+        document.getElementById("parentModal").addEventListener("click", function(event) {
+            if (event.target === this) closeParentModal();
+        });
 
-        document
-            .getElementById("parentModal")
-            .addEventListener("click", function(event) {
+        // DANNY & KATHERINE PHOTOS
+        const dannyKatherinePhotos = [
+            { src: "Kat and Dan snuggle.png", name: "Danny & Katherine" },
+            { src: "Dan.png", name: "Danny" },
+            { src: "Kat.png", name: "Katherine" },
+            { src: "Dan and Kat lables.png", name: "Danny & Katherine" }
+        ];
 
-                if (event.target === this) {
-                    closeParentModal();
-                }
+        let currentDannyKatherinePhoto = 0;
 
-            });
+        function openDannyKatherineModal() {
+            document.getElementById("dannyKatherineModal").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
 
+        function closeDannyKatherineModal() {
+            document.getElementById("dannyKatherineModal").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        function showDannyKatherinePhoto() {
+            const photo = dannyKatherinePhotos[currentDannyKatherinePhoto];
+
+            document.getElementById("dannyKatherineGalleryImage").src = photo.src;
+            document.getElementById("dannyKatherineGalleryImage").alt = photo.name;
+
+            document.getElementById("dannyKatherinePhotoCount").innerHTML =
+                '<span class="photo-name">' + photo.name +
+                '</span> — ' + (currentDannyKatherinePhoto + 1) +
+                ' of ' + dannyKatherinePhotos.length;
+        }
+
+        function nextDannyKatherinePhoto() {
+            currentDannyKatherinePhoto =
+                (currentDannyKatherinePhoto + 1) % dannyKatherinePhotos.length;
+            showDannyKatherinePhoto();
+        }
+
+        function previousDannyKatherinePhoto() {
+            currentDannyKatherinePhoto =
+                (currentDannyKatherinePhoto - 1 + dannyKatherinePhotos.length) %
+                dannyKatherinePhotos.length;
+            showDannyKatherinePhoto();
+        }
+
+        document.getElementById("dannyKatherineModal").addEventListener("click", function(event) {
+            if (event.target === this) closeDannyKatherineModal();
+        });
     </script>
 
 </body>
-
 </html>
-```
