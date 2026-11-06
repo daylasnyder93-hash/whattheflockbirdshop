@@ -101,9 +101,10 @@ nav a:hover {
     white-space: nowrap;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
     display: block;
-}  
+}
 
         /* =========================
            GENERAL SECTIONS
@@ -472,6 +473,20 @@ footer strong {
     </div>
 </div>
 
+   
+<nav>
+
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Our Birds</a>
+
+        <div class="dropdown-content">
+            <a href="birds.html">Shop Available Birds</a>
+            <a href="coming-soon.html">Coming Soon</a>
+            <a href="hatch-watch.html">Hatch Watch</a>
+            <a href="parent-birds.html">Meet the Parents</a>
+        </div>
+    </div>
+
     <div class="dropdown">
         <a href="#" class="dropbtn">Bird Merch</a>
 
@@ -483,11 +498,8 @@ footer strong {
     </div>
 
     <a href="financing.html">Financing</a>
-
     <a href="#contact">Contact</a>
-
-<a href="policies.html">Policies &amp; Contracts</a>
-    </div>
+    <a href="policies.html">Policies &amp; Contracts</a>
 
 </nav>
 
