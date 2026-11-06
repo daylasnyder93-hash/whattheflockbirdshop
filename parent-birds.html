@@ -285,7 +285,21 @@
         <div class="page-title">
             <h1>Meet the <span>Parents</span></h1>
         </div>
+        <!-- JIM & LAUREN -->
+        <div class="parent-card clickable"
+             onclick="openJimLaurenModal()">
 
+            <img src="Jim and Lauren parents.png"
+                 alt="Jim and Lauren"
+                 class="main-parent-photo">
+
+            <div class="parent-card-title">
+                <h2>Jim &amp; Lauren</h2>
+                <p>Meet the parents behind some of our Green-Cheeked Conure babies.</p>
+                <p class="click-text">Click to see their photos &amp; learn more</p>
+            </div>
+        </div>
+        
         <!-- ROSS & RACHAEL -->
         <div class="parent-card clickable" onclick="openParentModal()">
             <img src="ross-rachael.png"
@@ -335,6 +349,41 @@
 
     </main>
 
+        <!-- JIM & LAUREN GALLERY -->
+    <div class="parent-modal" id="jimLaurenModal">
+        <div class="modal-content">
+
+            <span class="close-button"
+                  onclick="closeJimLaurenModal()">&times;</span>
+
+            <h2>Jim &amp; Lauren</h2>
+
+            <div class="gallery">
+                <button class="gallery-arrow left"
+                        onclick="previousJimLaurenPhoto()"
+                        aria-label="Previous photo">&#10094;</button>
+
+                <img id="jimLaurenGalleryImage"
+                     src="Jim and Lauren parents.png"
+                     alt="Jim and Lauren"
+                     class="gallery-image">
+
+                <button class="gallery-arrow right"
+                        onclick="nextJimLaurenPhoto()"
+                        aria-label="Next photo">&#10095;</button>
+            </div>
+
+            <div class="photo-count" id="jimLaurenPhotoCount">
+                <span class="photo-name">Jim &amp; Lauren</span> — 1 of 3
+            </div>
+
+            <div class="parent-description">
+                <p>Jim and Lauren are the proud parents behind some of our adorable Green-Cheeked Conure babies!</p>
+            </div>
+
+            <a href="coming-soon.html" class="babies-button">Meet Their Babies</a>
+        </div>
+    </div>
     <!-- ROSS & RACHAEL GALLERY -->
     <div class="parent-modal" id="parentModal">
         <div class="modal-content">
@@ -432,6 +481,53 @@
     </div>
 
     <script>
+                // JIM & LAUREN PHOTOS
+        const jimLaurenPhotos = [
+            { src: "Jim and Lauren parents.png", name: "Jim & Lauren" },
+            { src: "Jim Friedman .jpeg", name: "Jim Friedman" },
+            { src: "Lauren Reynolds.jpeg", name: "Lauren Reynolds" }
+        ];
+
+        let currentJimLaurenPhoto = 0;
+
+        function openJimLaurenModal() {
+            document.getElementById("jimLaurenModal").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeJimLaurenModal() {
+            document.getElementById("jimLaurenModal").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        function showJimLaurenPhoto() {
+            const photo = jimLaurenPhotos[currentJimLaurenPhoto];
+
+            document.getElementById("jimLaurenGalleryImage").src = photo.src;
+            document.getElementById("jimLaurenGalleryImage").alt = photo.name;
+
+            document.getElementById("jimLaurenPhotoCount").innerHTML =
+                '<span class="photo-name">' + photo.name +
+                '</span> — ' + (currentJimLaurenPhoto + 1) +
+                ' of ' + jimLaurenPhotos.length;
+        }
+
+        function nextJimLaurenPhoto() {
+            currentJimLaurenPhoto =
+                (currentJimLaurenPhoto + 1) % jimLaurenPhotos.length;
+            showJimLaurenPhoto();
+        }
+
+        function previousJimLaurenPhoto() {
+            currentJimLaurenPhoto =
+                (currentJimLaurenPhoto - 1 + jimLaurenPhotos.length) %
+                jimLaurenPhotos.length;
+            showJimLaurenPhoto();
+        }
+
+        document.getElementById("jimLaurenModal").addEventListener("click", function(event) {
+            if (event.target === this) closeJimLaurenModal();
+        });
         // ROSS & RACHAEL PHOTOS
         const photos = [
             { src: "ross-rachael.png", name: "Ross & Rachael" },
